@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Webanwendungen2011-G05" default="phpunit" basedir=".">
+    <property name="source_comma_sep" value="lib,vendor"/>
+
+    <target name="phpunit" description="Run unit tests using PHPUnit and generates junit.xml and clover.xml">
+        <exec executable="${basedir}/lib/Tests/phpunit.php" failonerror="true">
+            <arg line="--configuration ./lib/Tests/phpunit.xml"/>
+        </exec>
+    </target>
+
+    <target name="phpdoc" description="Create PHP source code documentation with phpdoc">
+        <exec executable="env" failonerror="true">
+            <arg line="phpdoc -c phpdoc.ini"/>
+        </exec>
+    </target>
+</project>
